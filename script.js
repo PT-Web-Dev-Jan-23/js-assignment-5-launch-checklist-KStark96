@@ -15,5 +15,6 @@ window.addEventListener("load", function() {
          let planet = pickPlanet(listedPlanets);
             addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image);
    })
-   
+   let list = document.getElementById("faultyItems");
 });
+
