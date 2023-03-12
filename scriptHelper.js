@@ -57,7 +57,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     // If the shuttle is ready for launch, update the launch status stating that the shuttle is ready for launch.
     if (fuelLevel < 10000 && cargoLevel > 10000) {
         fuelStatus.innerHTML = "Fuel level too low for launch";
-        cargoStatus.innerHTML = "Cargo too heavy for launch";
+        cargoStatus.innerHTML = "Cargo mass too heavy for launch";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = 'rgb(199, 37, 78)';
     }   else if (fuelLevel < 10000 && cargoLevel < 10000) {
@@ -67,7 +67,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         launchStatus.style.color = "rgb(199, 37, 78)";
     }   else if (fuelLevel > 10000 && cargoLevel > 10000) {
         fuelStatusinnerHTML = "Fuel level high enough for launch";
-        cargoStatus.innerHTML = "Cargo too heavy for launch";
+        cargoStatus.innerHTML = "Cargo mass too heavy for launch";
         document.getElementById("launchStatus").innerHTML = "Shuttle is Not Ready for Launch";
         document.getElementById("launchStatus").style.color = "rgb(199, 37, 78)";
     } else {
