@@ -46,7 +46,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         alert("Make sure to enter valid information for each field!") 
     } else {
     // Updates pilotStatus and copilotStatus to include the pilot's and co-pilot's names.        
-        list.style.visibility = "hidden";
+        list.style.visibility = "visible";
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
     }
