@@ -1,4 +1,5 @@
 // const { listenerCount } = require('jsdom/lib/jsdom/virtual-console');
+require('isomorphic-fetch');
 
 // Write your helper functions here!
 function validateInput(testInput){
@@ -9,7 +10,7 @@ function validateInput(testInput){
 } else if (isNaN(testInput)){
         return "Not a Number";
 }
-require('isomorphic-fetch');
+
 }
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
@@ -28,9 +29,6 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
             `;
 }
 
- {
-   
-}
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let pilotStatus = document.getElementById("pilotStatus");
@@ -60,18 +58,18 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         cargoStatus.innerHTML = "Cargo mass too heavy for launch";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = 'rgb(199, 37, 78)';
-    }   else if (fuelLevel < 10000 && cargoLevel < 10000) {
+    }   else if (fuelLevel < 10000 && cargoLevel <= 10000) {
         fuelStatus.innerHTML = "Fuel level too low for launch";
         cargoStatus.innerHTML = "Cargo mass low enough for launch";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "rgb(199, 37, 78)";
-    }   else if (fuelLevel > 10000 && cargoLevel > 10000) {
+    }   else if (fuelLevel >= 10000 && cargoLevel > 10000) {
         fuelStatusinnerHTML = "Fuel level high enough for launch";
         cargoStatus.innerHTML = "Cargo mass too heavy for launch";
-        document.getElementById("launchStatus").innerHTML = "Shuttle is Not Ready for Launch";
-        document.getElementById("launchStatus").style.color = "rgb(199, 37, 78)";
+        launchStatus.innerHTML = "Shuttle is Not Ready for Launch";
+        launchStatus.style.color = "rgb(199, 37, 78)";
     } else {
-        fuelStatusinnerHTML = "Fuel level sufficient for launch.";
+        fuelStatusinnerHTML = "Fuel level high enough for launch";
         cargoStatus.innerHTML = "Cargo mass low enough for launch";
         launchStatus.innerHTML = "Shuttle is Ready for Launch";
         launchStatus.style.color = "rgb(65, 159, 106)";
